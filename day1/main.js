@@ -1,8 +1,6 @@
-// read the input of input.txt
-let fs = require('fs');
+import { parseInput } from '../inputParser/inputParser.js';
 
-// create a two dimensional array of the input where a double line break is a new array
-let input = fs.readFileSync('input/input.txt', 'utf8').trim().split('\r\n');
+let input = parseInput('input/input.txt', 'utf8');
 
 // Part One
 
