@@ -25,14 +25,13 @@ console.log('Part One:', partOne);
 
 const partTwo = input
 	.map(s => s.match(/(\d+ \w+)/gms))
-	.map(game => {
-		return game
+	.map(game => game
 			.map(s => s.split(' '))
 			.reduce((minSet, [count, color]) => {
 				return minSet.set(color, Math.max(minSet.get(color) || 0, count))
 			}, new Map())
-			.values();
-	})
+			.values()
+	)
 	.map(game => [...game].reduce((a, b) => a * b, 1))
 	.reduce((a, b) => a + b, 0);
 
